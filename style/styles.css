@@ -1,0 +1,29 @@
+h2 { color: #444; font-weight: lighter; }
+body { margin: 2em; }
+body, input[text], button { color: #888; font-family: Cambria, Georgia; }
+button { padding: 0.2em; font-size: 14px}
+* { font-family: Arial; }
+
+
+.sprite {
+    background: url(../images/sprite.svg);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nav > li > a {
+    padding: 15px 8px;
+}
+
+.homeicon {
+    background-position: -163px -2px;
+    width: 22px;
+    height: 21px;
+    display: inline-block;
+    margin: 15px 0 0 0;
+    padding-bottom: 0 !important;
+}

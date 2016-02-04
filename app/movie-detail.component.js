@@ -1,0 +1,57 @@
+System.register(['angular2/core', 'angular2/router', './movie.service'], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, router_1, movie_service_1;
+    var MovieDetailComponent;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (movie_service_1_1) {
+                movie_service_1 = movie_service_1_1;
+            }],
+        execute: function() {
+            MovieDetailComponent = (function () {
+                function MovieDetailComponent(_movieService, _routeParams) {
+                    this._movieService = _movieService;
+                    this._routeParams = _routeParams;
+                }
+                MovieDetailComponent.prototype.ngOnInit = function () {
+                    if (!this.movie) {
+                        var id = +this._routeParams.get('id');
+                        this._movieService.getMovie(id).then(function (muvee) {
+                            this.movie = muvee;
+                            console.log("movie detail", muvee, this.movie);
+                        });
+                    }
+                };
+                MovieDetailComponent.prototype.goBack = function () {
+                    window.history.back();
+                };
+                MovieDetailComponent = __decorate([
+                    core_1.Component({
+                        selector: 'my-movie-detail',
+                        templateUrl: 'app/movie-detail.component.html',
+                        styleUrls: ['app/movie-detail.component.css'],
+                        inputs: ['movie']
+                    }), 
+                    __metadata('design:paramtypes', [movie_service_1.MovieService, router_1.RouteParams])
+                ], MovieDetailComponent);
+                return MovieDetailComponent;
+            })();
+            exports_1("MovieDetailComponent", MovieDetailComponent);
+        }
+    }
+});
+//# sourceMappingURL=movie-detail.component.js.map

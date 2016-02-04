@@ -1,0 +1,14 @@
+
+<div class="col-lg-10">
+	<h3>{{ listType }} Movies</h3>
+</div>
+<br>
+
+
+<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+	<div *ngFor="#movie of movies" class="col-lg-3 col-md-3 movie-box" (click)="gotoDetail(movie)">
+		<div class="module movie">
+			<h4>{{movie.title}}</h4>
+		</div>
+	</div>
+</div>
